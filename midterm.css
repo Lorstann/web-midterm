@@ -1,0 +1,210 @@
+* {
+  font-family: 'Roboto', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: snow;
+  color: black;
+  line-height: 1.6rem;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0px;
+  color: black;
+  font-size: 2.8rem;
+  font-weight: bold;
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: black;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  padding: 25px;
+  margin: 0 auto 40px;
+  border-radius: 15px; 
+  box-shadow: 0 6px 12px black;
+  max-width: 650px;
+  gap: 20px;
+  transition: 0.3s; 
+}
+
+form:hover {
+  transform: scale(1.02);
+}
+
+label {
+  font-weight: bold;
+  color: black;
+}
+
+input, select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid snow;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1) inset;
+  font-size: 1rem;
+  background-color: whitesmoke;
+}
+
+input:focus, select:focus {
+  border-color: turquoise;
+  outline: none;
+  box-shadow: 0 0 5px rgba(55, 161, 232, 0.632);
+}
+
+button {
+  align-self: flex-start;
+  padding: 12px 25px;
+  font-size: 1rem;
+  color: white;
+  background-color: darkblue;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 1px;
+  transition: 0.3s 0.2s;
+}
+
+button:hover {
+  background-color: blue;
+  transform: translateY(-3px);
+}
+
+.error {
+  color: red;
+  font-size: 0.9em;
+}
+
+.tables {
+  display: flex;
+  flex-direction: column;
+  overflow-x: auto;
+  margin: 20px;
+}
+
+table {
+  width: 100%;
+  margin-top: 20px;
+  border: 1px;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+  font-size: 1rem;
+}
+
+th {
+  text-align: left;
+  padding: 15px;
+  background-color: darkblue;
+  color: white;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid ghostwhite;
+}
+
+tr:hover {
+  background-color: white;
+}
+
+td:last-child {
+  text-align: center;
+}
+
+#studentSearch, #assignmentSearch {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccd1d6;
+  border-radius: 8px;
+  font-size: 1rem;
+  background-color: #f8fafc;
+}
+
+#studentSearch:focus, #assignmentSearch:focus {
+  border-color: turquoise;
+  outline: none;
+  box-shadow: 0 0 5px rgba(55, 161, 232, 0.632);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2.4rem;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+  }
+
+  form {
+    padding: 20px;
+    gap: 15px;
+  }
+
+  table {
+    font-size: 0.9rem;
+  }
+
+  th, td {
+    padding: 10px;
+  }
+
+  button {
+    align-self: center;
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+  }
+
+  form {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  button {
+    font-size: 0.8rem;
+    padding: 8px 15px;
+  }
+
+  table {
+    font-size: 0.8rem;
+  }
+
+  th, td {
+    padding: 8px;
+  }
+}

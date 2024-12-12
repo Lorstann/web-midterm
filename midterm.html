@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="midterm.css">
+    <script src="midterm.js" defer></script>
+</head>
+<body>
+    <h1>Student Management System</h1>
+    <section>
+        <h2>Course Adding</h2>
+        <form id="courseForm">
+            <label for="courseCode">Course Code:</label>
+            <input type="text" id="courseCode" required><br>
+
+            <label for="courseName">Course Name:</label>
+            <input type="text" id="courseName" pattern="[A-Za-z ]+" required><br>
+
+            <label for="instructorName">Instructor Name:</label>
+            <input type="text" id="instructorName" pattern="[A-Za-z]+" required><br>
+
+            <label for="instructorSurname">Instructor Surname:</label>
+            <input type="text" id="instructorSurname" pattern="[A-Za-z]+" required><br>
+
+            <label for="courseCredit">Course Credit:</label>
+            <select id="courseCredit" required>
+                <option value="1">1 credit</option>
+                <option value="2">2 credit</option>
+                <option value="3">3 credit</option>
+                <option value="4">4 credit</option>
+                <option value="5">5 credit</option>
+                <option value="6">6 credit</option>
+                <option value="7">7 credit</option>
+                <option value="8">8 credit</option>
+                <option value="9">9 credit</option>
+                <option value="10">10 credit</option>
+            </select><br>            
+
+            <label for="gradingScale">Grading Scale:</label>
+            <select id="gradingScale" required>
+                <option value="7">7 point scale</option>
+                <option value="10">10 point scale</option>
+            </select><br>
+
+            <button type="submit">ADD COURSE</button>
+            <div class="error" id="courseError"></div>
+        </form>
+
+    </section>
+    <section>
+        <h2>Student Adding</h2>
+        <form id="studentForm">
+            <label for="studentID">Student ID:</label>
+            <input type="number" id="studentID" required><br>
+
+            <label for="studentName">Student Name:</label>
+            <input type="text" id="studentName" pattern="[A-Za-z]+" required><br>
+
+            <label for="studentSurname">Student Surname:</label>
+            <input type="text" id="studentSurname" pattern="[A-Za-z]+" required><br>
+
+            <button type="submit">ADD STUDENT</button>
+            <div class="error" id="studentError"></div>
+        </form>
+
+    </section>
+    <section>
+        <h2>Student Assignment</h2>
+        <form id="assignmentForm">
+            <label for="selectCourse">Select Course:</label>
+            <select id="selectCourse" required></select><br>
+
+            <label for="assignmentStudentID">Student ID:</label>
+            <input type="number" id="assignmentStudentID" required><br>
+
+            <label for="midtermScore">Midterm Score:</label>
+            <input type="number" id="midtermScore" min="0" max="100" required><br>
+
+            <label for="finalScore">Final Score:</label>
+            <input type="number" id="finalScore" min="0" max="100" required><br>
+
+            <button type="submit">ASSIGN STUDENT</button>
+            <div class="error" id="assignmentError"></div>
+        </form>
+
+    </section>
+    <div class="tables">    
+        <section>
+            <h2>Course List</h2>
+            <table id="courseTable">
+                <thead>
+                    <tr>
+                        <th>Code</th>
+                        <th>Name</th>
+                        <th>Instructor</th>
+                        <th>Credit</th>
+                        <th>Grading Scale</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section id="courseDetails" style="display: none;">
+            <h2>Course Details</h2>
+            <p id="detailsPassed"></p>
+            <p id="detailsFailed"></p>
+            <p id="detailsMean"></p>
+            <button onclick="closeCourseDetails()">Close</button>
+        </section>
+        <section>
+            <h2>Student List</h2>
+            <input type="text" id="studentSearch" placeholder="Search by Student ID or Name">
+            <table id="studentTable">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Surname</th>
+                        <th>GPA</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Assignments</h2>
+            <label for="courseFilter">Select Course:</label>
+            <select id="courseFilter">
+                <option value="all">All Courses</option>
+            </select>
+            <label>Filter by Result:</label>
+            <div>
+                <button id="filterAll" class="filterButton" data-filter="all">All</button>
+                <button id="filterPass" class="filterButton" data-filter="pass">Pass</button>
+                <button id="filterFail" class="filterButton" data-filter="fail">Fail</button>
+            </div>
+            <input type="text" id="assignmentSearch" placeholder="Search by Student ID or Name">
+            <table id="assignmentTable">
+                <thead>
+                    <tr>
+                        <th>Course Code</th>
+                        <th>Student ID</th>
+                        <th>Student</th>
+                        <th>Midterm Score</th>
+                        <th>Final Score</th>
+                        <th>Grade</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </section>
+    </div>
+</body>
+</html>
